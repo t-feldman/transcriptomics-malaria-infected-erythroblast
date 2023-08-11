@@ -1,0 +1,110 @@
+---
+title: "PLOTTING_ENRICHR"
+author: "Tamar Feldman"
+date: '2023-05-06'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## IMPORT STATEMENTS
+
+```{r}
+# importing required packages
+library(readxl)
+library(ggplot2)
+```
+
+## FUNCTION TO LOAD WORKSHEETS INTO R
+
+```{r}
+
+multiplesheets <- function(fname) {
+   
+  # getting info about all excel sheets
+  sheets <- readxl::excel_sheets(fname)
+  tibble <- lapply(sheets, function(x) readxl::read_excel(fname, sheet = x))
+  data_frame <- lapply(tibble, as.data.frame)
+    
+  # assigning names to data frames
+  names(data_frame) <- sheets
+    
+  # print data frame
+  print(data_frame)
+}
+  
+# specifying the path name
+
+```
+
+## READ IN WORKSHEETS
+
+```{r echo=FALSE, include = FALSE}
+path.to.enrichr <- "../PROCESSED_DATA/ENRICHR/ENRICHR-RESULTS-PVAL-AND-OD-FILTERED.xlsx"
+my.sheets <- multiplesheets(path.to.enrichr)
+```
+
+## ADD COLUMN WITH SHEET NAME, -LOG10(QVALUE)
+Need to add the comparison/cell type to be used as the y-value in the plot. This requires accessing the sheet name (list value's name). To do this, use seq_along to use lapply on the list indices and a function that takes the list index rather than the actual list value.
+```{r}
+#x <- names(my.sheets[1])
+#y <- my.sheets[[1]]
+#y$Comparison <- rep(paste(x), each = nrow(y))
+# x$Comparison <- rep(paste(names(x)),each = nrow(x))
+for (i in seq_along(my.sheets)) {
+  x <- names(my.sheets[i])
+  y <- my.sheets[[i]]
+  y$Comparison <- rep(paste(x), each = nrow(y))
+  y$`-log10(qvalue)` <- -log10(y$`Adjusted P-value`)
+  my.sheets[[i]] <- y
+}
+```
+
+## MAKE EARLY AND LATE SHEETS
+Need to make factor with levels to reorder the y axis
+```{r}
+early <-
+  rbind(my.sheets[[1]], my.sheets[[3]], my.sheets[[2]], my.sheets[[4]])
+early$Comparison <-
+  factor(early$Comparison,
+         levels = c("ProE UP", "BasoE UP", "ProE DOWN", "BasoE DOWN"))
+
+late <- rbind(my.sheets[[5]], my.sheets[[7]], my.sheets[[6]], my.sheets[[8]])
+late$Comparison <-
+  factor(late$Comparison,
+         levels = c("PolyE UP", "OrthoE UP", "PolyE DOWN", "OrthoE DOWN"))
+```
+
+## MAKE BUBBLE PLOTS (LATE)
+
+```{r}
+pdf("../PROCESSED_DATA/ENRICHR/LateCellsEnrichmentPlot.pdf", width = 5, height = 4)
+p <- ggplot(late, aes(x = Term, y = Comparison,color = `Odds Ratio`, size = `-log10(qvalue)`))
+p + geom_point() + 
+  scale_color_viridis_c(name = 'Odds Ratio', option = "C",direction = -1, end = 0.9, guide = guide_colorbar(barwidth = 4, barheight = 0.5)) +
+  scale_x_discrete(name = "MSigDB Hallmark Gene Set") +
+  scale_y_discrete(limits=rev) +
+  theme_bw() +
+  theme(text = element_text(size=7),axis.text.x = element_text(angle = 30,hjust=1,size=7), axis.title = element_blank(), aspect.ratio = 1/3.2,legend.direction = "horizontal",legend.position = "top") +
+  labs(size="-log(q-value)") +
+  scale_size_continuous(range = c(1,5),guide = guide_legend(label.position = "bottom",label.vjust = 12,label.theme = element_text(colour="white",size = 6),keywidth = 0.5))
+dev.off()
+```
+
+## MAKE BUBBLE PLOTS (EARLY)
+
+```{r}
+pdf("../PROCESSED_DATA/ENRICHR/EarlyCellsEnrichmentPlot.pdf", width = 5, height = 4)
+p <- ggplot(early, aes(x = Term, y = Comparison,color = `Odds Ratio`, size = `-log10(qvalue)`))
+p + geom_point() + 
+  scale_color_viridis_c(name = 'Odds Ratio', option = "C",direction = -1, end = 0.9, guide = guide_colorbar(barwidth = 4, barheight = 0.5)) +
+  scale_x_discrete(name = "MSigDB Hallmark Gene Set") +
+  scale_y_discrete(limits=rev) +
+  theme_bw() +
+  theme(text = element_text(size=7),axis.text.x = element_text(angle = 30,hjust=1,size=7), axis.title = element_blank(), aspect.ratio = 1/3.2,legend.direction = "horizontal",legend.position = "top") +
+  labs(size="-log(q-value)") +
+  scale_size_continuous(range = c(1,5),guide = guide_legend(label.position = "bottom",label.vjust = 12,label.theme = element_text(colour="white",size = 6),keywidth = 0.5))
+dev.off()
+```

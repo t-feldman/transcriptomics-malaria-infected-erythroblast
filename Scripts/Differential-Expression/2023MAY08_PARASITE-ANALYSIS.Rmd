@@ -1,0 +1,124 @@
+---
+title: "Parasite"
+author: "Tamar Feldman"
+date: '2023-05-08'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+# IMPORT STATEMENTS
+
+```{r include = FALSE}
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(tidyverse)
+library(DESeq2)
+library(pheatmap)
+library(RColorBrewer)
+library(grid)
+```
+
+## OTTO ET AL
+
+```{r}
+otto.file.path <- "../REFERENCE_FILES/DIFFERENTIAL_EXPRESSION/Pf_Published_Otto16.csv"
+otto.counts <- read.csv(otto.file.path, header = T)
+otto.counts <- data.frame(otto.counts, row.names = "gene_ids")
+#%>%
+#  filter(rowMeans(.) >= 5)
+print(head(otto.counts))
+```
+
+## MY COUNTS
+
+```{r}
+my.file.path <- "../PROCESSED_DATA/ALIGNMENT_RESULTS/PfGeneCountsTable_v3.csv"
+my.counts <- read.csv(my.file.path, header = T)
+rownames(my.counts) <- my.counts$Gene.ID
+my.counts <- my.counts[,2:ncol(my.counts)]
+head(my.counts)
+```
+
+## DESEQ2 FOR NORMALIZED COUNTS
+
+```{r}
+my.col.path <- "../REFERENCE_FILES/DIFFERENTIAL_EXPRESSION/ParasiteColData.csv"
+my.coldata <- read.csv(file = my.col.path, header = T)
+my.coldata$cell.type <- factor(my.coldata$cell.type,levels = c("ProE","BasoE","PolyE","OrthoE"))
+my.dds <- DESeqDataSetFromMatrix(countData = my.counts, colData = my.coldata, design = ~cell.type)
+keep <- rowSums(counts(my.dds) >= 10) >= 4
+my.dds <- my.dds[keep,]
+my.dds <- estimateSizeFactors(my.dds)
+my.pf.counts <- counts(my.dds, normalized = T)
+```
+
+## MERGE
+
+```{r}
+all.counts <- merge(my.pf.counts,otto.counts, by = 0)
+print(head(all.counts))
+```
+
+## SPEARMANN
+
+```{r}
+cormat <- cor(x = all.counts[,2:18], y = all.counts[,19:length(colnames(all.counts))], method = "spearman")
+cormat2 <- cor(all.counts[,-1],method = "spearman")
+```
+
+## HEATMAP
+```{r}
+annotation2 <- data.frame("Cell.Type" = c("ProE","ProE","ProE","ProE","BasoE","BasoE","BasoE","BasoE","PolyE","PolyE","PolyE","PolyE","PolyE","OrthoE","OrthoE","OrthoE","OrthoE"), row.names = colnames(my.pf.counts))
+my.colors <- list("Cell.Type"=c("ProE" = "midnightblue","BasoE" = "slateblue", "PolyE" = "mediumorchid","OrthoE" = "palevioletred"))
+colors <- colorRampPalette(brewer.pal(7, "Greys"))(255)
+pheatmap(
+  t(cormat),
+  cluster_rows = FALSE,
+  cluster_cols = FALSE,
+  border_color = "white",
+  col = colors,
+  show_rownames = TRUE,
+  show_colnames = F,
+  annotation_col = annotation2,
+  annotation_colors = my.colors,
+  cellwidth = 20,
+  cellheight = 20,
+  fontsize = 8,
+  gaps_col = c(4,8,13),
+  #angle_col = 45,
+  name = "Spearman Correlation"
+)
+p1 <- grid.grab()
+pdf("../PROCESSED_DATA/DESEQ2_RESULTS/ParasiteCorr.pdf")
+grid.draw(p1)
+dev.off()
+```
+
+```{r}
+export.file.path <- "../REFERENCE_FILES/DIFFERENTIAL_EXPRESSION/PlasmodiumExportomeEdited.csv"
+export.genes <- read.csv(export.file.path, header = T)
+# get non-zero counts at either stage
+troph.genes <- otto.counts %>%
+  select(hrs_8, hrs_16) %>%
+  filter(rowSums(.) != 0)
+export.troph <- merge(troph.genes, export.genes, by.x = 0,by.y =
+"PlasmoDB.ID")
+```
+
+```{r}
+export.troph <- export.troph[!duplicated(export.troph$Row.names),]
+# merge with expressed genes
+my.export <- merge(my.pf.counts, export.troph,by.x = 0, by.y = "Row.names")
+print(head(my.export))
+my.export <- my.export[!duplicated(my.export$Row.names),]
+```
+```{r}
+write.csv(x = my.export, file = "../PROCESSED_DATA/DESEQ2_RESULTS/PARASITE/ExportedOverlap_Output.csv")
+```
+

@@ -1,0 +1,235 @@
+---
+title: "Heatmaps"
+author: "Tamar Feldman"
+date: '2023-05-07'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# IMPORT STATEMENTS
+
+```{r include=FALSE}
+library(DESeq2)
+library(pheatmap)
+library(grid)
+library(RColorBrewer)
+```
+
+# LOAD FILES
+
+```{r}
+my.col.file <-
+  "../REFERENCE_FILES/DIFFERENTIAL_EXPRESSION/HumanColData_DESeq2_Input.csv"
+my.col <- read.csv(file <- my.col.file, header = T, row.names = 1)
+
+my.count.file <-
+  "../PROCESSED_DATA/ALIGNMENT_RESULTS/HumanGeneCountsTable_v2.csv"
+my.counts <-
+  read.csv(file = my.count.file,
+           header = T,
+           row.names = 1)
+
+# CHECK THAT COLUMN DATA AND COUNTS DATA ARE COMPATIBLE
+all(rownames(my.col) %in% colnames(my.counts))
+all(rownames(my.col) == colnames(my.counts))
+```
+
+# FUNCTIONS
+## FILTER
+
+```{r}
+filter.coldata <-
+  function(my.cell, coldata) {
+    my.filter <- grepl(my.cell, row.names(coldata), fixed = TRUE)
+    return(coldata[my.filter,])
+  }
+
+filter.counts <-
+  function(my.cell, countdata){
+    my.filter <- grepl(my.cell, colnames(countdata), fixed = TRUE)
+    return(countdata[,my.filter])
+  }
+```
+
+## MAKE OBJECT
+
+```{r}
+my.conditions <- c("Media","SRS","Uninfected","Infected")
+make.object <-
+  function(filtered.coldata, filtered.counts, conditions){
+    filtered.coldata$condition <- factor(filtered.coldata$condition, 
+                                         levels = conditions)
+    
+    dds <- DESeqDataSetFromMatrix(countData = filtered.counts,
+                                  colData = filtered.coldata,
+                                  design = ~ condition)
+    
+    keep <- rowSums(counts(dds)>=10) >= 4 # LOW COUNT FILTER
+    dds <- dds[keep,]
+    return(dds)
+  }
+```
+
+## EXPORT DESEQ2 NORMALIZED COUNTS
+VST
+
+```{r}
+export.counts <-
+  function(dds, outdir, my.cell) {
+    outfile <- paste(Sys.Date(), "VST", my.cell, sep = "-")
+    outpath <- paste(outdir, my.cell, "MOR", outfile, sep = "/")
+    
+    raw.counts <- assay(vst(dds)) # GET COUNTS
+    
+      write.csv(
+      x = raw.counts,
+      file = paste0(outpath,".csv"),
+      row.names = T,
+    )
+    return(raw.counts)
+  }    
+```
+
+## MAKE HEATMAP
+
+```{r}
+my.heatmap <- function(my.cell, my.coldata) {
+  my_path <-
+    paste0("../PROCESSED_DATA/HEATMAPS/",
+           my.cell,
+           "-VST_Infected_v_Uninfected.csv")
+  my_vst <- read.csv(my_path, header = T, row.names = 1) #GET VST
+  my.coldata.filtered <-
+    my.coldata[my.coldata$cell.type == my.cell &
+                 my.coldata$condition %in% c("Uninfected", "Infected"), ] #FILTER
+  annotation2 <- my.coldata.filtered #ANNOTATION CATEGORY WITH AS SAMPLE ROW NAME
+  row.names(annotation2) <- annotation2$X
+  annotation2 <- annotation2["condition"]
+  rownames(annotation2) <- rownames(my.coldata.filtered)
+  my.colors <-
+    list("condition" = c("Uninfected" = "#b06902", "Infected" = "#62b002"))
+  
+  p1 <-
+    pheatmap(
+      t(my_vst[, rownames(my.coldata.filtered)]),
+      color = hcl.colors(100, "Blue-Red3"),
+      cluster_rows = T,
+      show_colnames = F,
+      show_rownames = F,
+      border_color = NA,
+      scale = "column",
+      clustering_method = "ward.D2",
+      annotation_row = annotation2,
+      annotation_colors = my.colors,
+      treeheight_row = 20,
+      treeheight_col = 0,
+      cellheight = 4,
+      annotation_names_row = F,
+      fontsize = 9
+    )
+  
+  save_pheatmap_pdf(p1,paste0("../PROCESSED_DATA/HEATMAPS/",my.cell,"HEATMAP-INFECTED-V-UNINFECTED.pdf"))
+  
+}
+
+
+```
+
+## FUNCTION TO SAVE HEATMAP
+```{r}
+save_pheatmap_pdf <- function(x, filename, width=6.75, height=2) {
+   stopifnot(!missing(x))
+   stopifnot(!missing(filename))
+   pdf(filename, width=width, height=height)
+   grid::grid.newpage()
+   grid::grid.draw(x$gtable)
+   dev.off()
+}
+```
+
+
+## MASTER FUNCTION 1
+For making VST files to send to Python to select only DEGs
+```{r}
+my.master.function <-
+  function(my.cell, my.counts, my.col, my.outdir) {
+    my.filtered.counts <-
+      filter.counts(my.cell = my.cell, countdata = my.counts)
+    
+    my.filtered.coldata <-
+      filter.coldata(my.cell = my.cell, coldata = my.col)
+    
+    my.dds <-
+      make.object(
+        filtered.coldata = my.filtered.coldata,
+        filtered.counts = my.filtered.counts,
+        conditions = my.conditions
+      )
+    my.dds <- DESeq(my.dds)    
+    my.raw.counts <-
+      export.counts(dds = my.dds,
+                 outdir = my.outdir,
+                 my.cell = my.cell)
+}
+```
+
+# RUN MASTER FUNCTION
+## ProE
+```{r include = FALSE}
+my.master.function(
+    my.cell = "ProE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/HEATMAPS"
+)
+```
+
+## BasoE
+
+```{r include = FALSE}
+my.master.function(
+    my.cell = "BasoE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/HEATMAPS"
+)
+```
+
+## PolyE
+
+```{r include = FALSE}
+my.master.function(
+    my.cell = "PolyE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/HEATMAPS"
+)
+```
+
+## OrthoE
+
+```{r include = FALSE}
+my.master.function(
+    my.cell = "OrthoE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/HEATMAPS"
+)
+```
+
+
+
+# RUN HEATMAP FUNCTION
+
+```{r}
+my.heatmap("ProE",my.col)
+my.heatmap("BasoE",my.col)
+my.heatmap("PolyE",my.col)
+my.heatmap("OrthoE",my.col)
+```
+
+
+
