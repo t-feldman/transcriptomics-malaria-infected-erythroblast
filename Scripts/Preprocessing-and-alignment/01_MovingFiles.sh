@@ -3,7 +3,7 @@
 # Project: Feldman et al. Blood Adv. 2023
 # Purpose: Move fastq files into sample directories
 
-# Requires the sample sheet file: 2021AUG06_SampleSheet.csv
+# Requires the sample sheet file: 2021DEC06_SampleSheet.csv
 # The sample sheet associates fastq files with biological samples
 
 # Inputs
