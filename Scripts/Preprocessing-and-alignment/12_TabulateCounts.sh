@@ -1,10 +1,15 @@
 #!/bin/bash
+# Author: Tamar Feldman
+# Project: Feldman et al. Blood Adv. 2023
+# Purpose: Run FASTQC on the files contained in listed directories
 
-DIR_SHEET=$1 # path/to/list/of/sample/directories
-NEW_PATH=$2 # path/to/output/dir
-DATA_DIR=$3
-OUTPUT_NAME=$4
-SUFFIX=$5
+# Requires the list of directories: 2023DEC09_DirectoryList.csv
+
+DIR_SHEET=$1 # path to list of sample directories
+NEW_PATH=$2 # path to output directory for tabulated counts
+DATA_DIR=$3 # path to parent directory of input file directories
+OUTPUT_NAME=$4 # name for output file with tabulated gene counts
+SUFFIX=$5 # use if suffix was added to the file names for alignment
 
 [[ -d $NEW_PATH ]] || mkdir -p $NEW_PATH/tmp
 
