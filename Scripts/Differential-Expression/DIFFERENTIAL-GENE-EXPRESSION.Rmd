@@ -1,0 +1,380 @@
+---
+title: "DIFFERENTIAL EXPRESSION ANALYSIS"
+author: "Author: Tamar Feldman"
+output: html_document
+---
+<font size="4">Project: Feldman et al. _Blood Adv_. 2023  
+Purpose:  
+- Differential human gene expression analysis.  
+- Export parasite gene counts as CPMs for further analysis.  
+Required Files:  
+- HumanGeneCountsTable_v2.csv  
+- HumanColData_DESeq2_Input.csv  
+- PfGeneCountsTable_v2.csv</font>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## LIBRARIES
+
+```{r eval=FALSE}
+library(DESeq2)
+library(IHW)
+library(ggplot2)
+```
+
+## FUNCTIONS
+
+### FILTER COUNTS TABLE
+Filters counts table columns according to keyword  
+
+```{r eval=FALSE}
+# my.cell = "keyword"
+# countdata = table with gene counts in rows and samples in columns
+filter.counts <-
+  function(my.cell, countdata){
+    my.filter <- grepl(my.cell, colnames(countdata), fixed = TRUE)
+    return(countdata[,my.filter])
+  }
+```
+
+### FILTER COLUMN DATA  
+Filters column data (see DESeq2 vignette) columns according to keyword
+
+```{r eval=FALSE}
+# my.cell = "keyword"
+# coldata = table with samples in rows and attributes in columns
+filter.coldata <-
+  function(my.cell, coldata) {
+    my.filter <- grepl(my.cell, row.names(coldata), fixed = TRUE)
+    return(coldata[my.filter,])
+  }
+```
+
+### MAKE DESEQ2 OBJECT (HUMAN)  
+Creates a DESeq2 object for analysis with desired sample conditions from column  
+data and gene counts tables that are filtered by desired cell type and/or  
+conditions.  
+Media, SRS, Uninfected, and/or Infected  
+```{r eval=FALSE}
+# filtered.coldata = table with samples in rows and attributes in columns
+# filtered.counts = table with gene counts in rows and samples in columns
+# conditions = list of conditions in the filtered tables
+# eg c("Media","SRS", "Uninfected", "Infected")
+
+
+make.object <-
+  function(filtered.coldata, filtered.counts, conditions){
+    filtered.coldata$condition <- factor(filtered.coldata$condition, 
+                                         levels = conditions)
+    
+    dds <- DESeqDataSetFromMatrix(countData = filtered.counts,
+                                  colData = filtered.coldata,
+                                  design = ~ condition)
+    
+    keep <- rowSums(counts(dds)>=10) >= 4 # LOW COUNT FILTER
+    dds <- dds[keep,]
+    return(dds)
+  }
+```
+
+### MAKE DESEQ2 OBJECT (PARASITE)
+Creates a DESeq2 object with desired sample conditions from column  
+data and gene counts tables that are filtered by desired cell type and/or  
+conditions.  This is used for ease of applying the low count filter and export.
+```{r eval=FALSE}
+# filtered.coldata = table with samples in rows and attributes in columns
+# filtered.counts = table with gene counts in rows and samples in columns
+# conditions = list of conditions in the filtered tables
+
+make.object.parasite <-
+  function(filtered.coldata, filtered.counts, conditions){
+    filtered.coldata$condition <- factor(filtered.coldata$condition, 
+                                         levels = conditions)
+    
+    dds <- DESeqDataSetFromMatrix(countData = filtered.counts,
+                                  colData = filtered.coldata,
+                                  design = ~ 1)
+    
+    keep <- rowSums(counts(dds)>=10) >= 4 # LOW COUNT FILTER
+    dds <- dds[keep,]
+    return(dds)
+  }
+```
+
+### EXPORT CPM  
+Creates a table with gene counts expressed as CPM.  
+```{r eval=FALSE}
+# dds = dds object created with make.object (includes low count filter)
+# outdir = path to destination directory for CPM table
+# my.cell = keyword used to filter column and count data
+export.cpm <-
+  function(dds, outdir, my.cell) {
+    outfile <- paste(Sys.Date(), "CPM", my.cell, sep = "-")
+    outpath <- paste(outdir, my.cell, "CPM", outfile, sep = "/")
+    
+    raw.counts <- counts(dds, normalized = F) # GET COUNTS
+    
+    # MAKE NUMERICS AND TRANSFORM TO DATAFRAME
+    RNA.counts <-
+      as.data.frame(apply(raw.counts, 2, as.numeric))[, 1:dim(raw.counts)[[2]]]
+    
+    # CALCULATE CPM
+    cpm <-
+      sweep(RNA.counts, 2, colSums(RNA.counts), FUN = "/") * 1000000
+    rownames(cpm) <-
+      rownames(raw.counts) # ADD BACK GENE IDS AS ROW NAMES
+    write.csv(
+      x = cpm,
+      file = paste0(outpath,".csv"),
+      row.names = T,
+    )
+    return(cpm)
+  }
+```
+
+### DIFFERENTIAL GENE EXPRESSION RESULTS 
+Outputs csv file of results from differential gene expression analysis for a  
+given contrast supplied as c("Condition 1","Condition 2").  
+Ex: c("Uninfected","Infected")
+```{r eval=FALSE}
+# dds = dds object created with make.object (includes low count filter) 
+#       after running DESeq2 on the object
+# con = contrast specified by tuple of strings
+# path to destination directory for output file
+make.results <-
+  function(dds, con, my.cell,outdir) {
+    outfile1 <-
+      paste(Sys.Date(), my.cell, con[[1]], "vs", con[[2]], sep = "-")
+    outfile2 <-
+      paste(Sys.Date(), my.cell, con[[1]], "vs", con[[2]], "Summary", sep = "-")
+    
+    outpath1 <-
+      paste(outdir, my.cell, "DIFFERENTIAL_EXPRESSION", outfile1, sep = "/")
+    outpath2 <-
+      paste(outdir, my.cell, "DIFFERENTIAL_EXPRESSION", outfile2, sep = "/")
+    
+    # RUN DESEQ2 RESULTS FUNCTION
+    res <-
+      results(
+        dds,
+        contrast = c("condition", con[[1]], con[[2]]),
+        alpha = 0.05,
+        filterFun = ihw
+      )
+    
+    write.csv(x = res, file = paste0(outpath1,".csv"), row.names = T)
+    capture.output(summary(res), file = paste0(outpath2, ".txt"))
+  }
+```
+
+### MASTER FUNCTION (HUMAN)
+This master function is run for every cell type to export the cpm table and  
+differential gene expression analysis. Cell types are run separately because the  
+transcriptome changes drastically between cell types - the total number of genes  
+expressed decreases as does expression of most genes that are still expressed  
+except for a small subset that ramp up sharply (eg glycophorin A).
+```{r eval=FALSE}
+# my.cell = keyword used to filter column and count data
+# my.counts = table with human gene counts in rows and samples in columns
+# my.col = table with samples in rows and attributes in columns
+# my.outdir = path to destination directory for results
+# my.contrasts = list of contrasts for results function
+my.master.function <-
+  function(my.cell, my.counts, my.col, my.outdir, my.contrasts) {
+    my.filtered.counts <-
+      filter.counts(my.cell = my.cell, countdata = my.counts)
+    
+    my.filtered.coldata <-
+      filter.coldata(my.cell = my.cell, coldata = my.col)
+    
+    my.dds <-
+      make.object(
+        filtered.coldata = my.filtered.coldata,
+        filtered.counts = my.filtered.counts,
+        conditions = my.conditions
+      )
+    
+    my.cpm <-
+      export.cpm(dds = my.dds,
+                 outdir = my.outdir,
+                 my.cell = my.cell)
+    
+    my.dds <- DESeq(my.dds)
+    
+    for (my.contrast in my.contrasts) {
+      make.results(
+        dds = my.dds,
+        con = my.contrast,
+        my.cell = my.cell,
+        outdir = my.outdir
+      )
+    }
+  }
+
+```
+
+### MASTER FUNCTION FOR PARASITE CPM
+Used to export parasite gene counts expressed as CPMs.
+```{r eval=FALSE}
+# my.cell = keyword used to filter column and count data
+# my.counts = table with parasite gene counts in rows and samples in columns
+# my.col = table with samples in rows and attributes in columns
+# my.outdir = path to destination directory for results
+my.master.function.parasite <-
+  function(my.cell, my.counts, my.col, my.outdir) {
+    my.filtered.counts <-
+      filter.counts(my.cell = my.cell, countdata = my.counts)
+    
+    my.filtered.coldata <-
+      filter.coldata(my.cell = my.cell, coldata = my.col)
+    
+    my.filtered.coldata <-
+      filter.coldata("Infected", my.filtered.coldata)
+    
+    my.filtered.counts <-
+      filter.counts("Infected", my.filtered.counts)
+    
+    my.dds <-
+      make.object.parasite(
+        filtered.coldata = my.filtered.coldata,
+        filtered.counts = my.filtered.counts,
+        conditions = "Infected"
+      )
+    
+    my.cpm <-
+      export.cpm(dds = my.dds,
+                 outdir = my.outdir,
+                 my.cell = my.cell)
+  }
+```
+
+## HUMAN GENE EXPRESSION ANALYSIS
+
+### PREPARE CONTRASTS AND LOAD HUMAN FILES
+```{r eval=FALSE}
+my.contrasts <-
+  list(
+    c("SRS", "Media"),
+    c("Uninfected", "Media"),
+    c("Uninfected", "SRS"),
+    c("Infected", "Media"),
+    c("Infected", "SRS"),
+    c("Infected","Uninfected")
+  )
+# LOAD COLUMN DATA AND HUMAN GENE COUNTS
+my.col.file <-
+  "../REFERENCE_FILES/DIFFERENTIAL_EXPRESSION/HumanColData_DESeq2_Input.csv"
+my.col <- read.csv(file <- my.col.file, header = T, row.names = 1)
+
+my.count.file <-
+  "../PROCESSED_DATA/ALIGNMENT_RESULTS/HumanGeneCountsTable_v2.csv"
+my.counts <-
+  read.csv(file = my.count.file,
+           header = T,
+           row.names = 1)
+
+# CHECK THAT COLUMN DATA AND COUNTS DATA ARE COMPATIBLE
+all(rownames(my.col) %in% colnames(my.counts))
+all(rownames(my.col) == colnames(my.counts))
+```
+
+
+### RUN MASTER FUNCTION: PROE
+```{r eval=FALSE}
+my.master.function(
+    my.cell = "ProE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/DESEQ2_RESULTS"
+)
+```
+
+### RUN MASTER FUNCTION: BASOE
+```{r eval=FALSE}
+my.master.function(
+    my.cell = "BasoE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/DESEQ2_RESULTS"
+)
+```
+
+### RUN MASTER FUNCTION: POLYE
+```{r eval=FALSE}
+my.master.function(
+    my.cell = "PolyE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/DESEQ2_RESULTS"
+)
+```
+
+### RUN MASTER FUNCTION: ORTHOE
+```{r eval=FALSE}
+my.master.function(
+    my.cell = "OrthoE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/DESEQ2_RESULTS"
+)
+```
+
+## PREPARE FOR PARASITE ANALYSIS
+```{r eval=FALSE}
+my.col.file <- # USES SAME AS HUMAN FOR COLUMN DATA
+  "../REFERENCE_FILES/DIFFERENTIAL_EXPRESSION/HumanColData_DESeq2_Input.csv"
+my.col <- read.csv(file <- my.col.file, header = T, row.names = 1)
+
+my.count.file <- # PARASITE GENE COUNT TABLE
+  "../PROCESSED_DATA/ALIGNMENT_RESULTS/PfGeneCountsTable_v2.csv"
+my.counts <-
+  read.csv(file = my.count.file,
+           header = T,
+           row.names = 1)
+
+# CHECK THAT COLUMN DATA AND COUNTS DATA ARE COMPATIBLE
+all(rownames(my.col) %in% colnames(my.counts))
+all(rownames(my.col) == colnames(my.counts))
+```
+
+### RUN MASTER PARASITE FUNCTION FOR PROE
+```{r eval=FALSE}
+my.master.function.parasite(
+    my.cell = "ProE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/DESEQ2_RESULTS/PARASITE"
+)
+```
+
+### RUN MASTER PARASITE FUNCTION FOR BASOE
+```{r eval=FALSE}
+my.master.function.parasite(
+    my.cell = "BasoE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/DESEQ2_RESULTS/PARASITE"
+)
+```
+
+### RUN MASTER PARASITE FUNCTION FOR POLYE
+```{{r eval=FALSE}
+my.master.function.parasite(
+    my.cell = "PolyE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/DESEQ2_RESULTS/PARASITE"
+)
+```
+
+### RUN MASTER PARASITE FUNCTION FOR ORTHOE
+```{r eval=FALSE}
+my.master.function.parasite(
+    my.cell = "OrthoE",
+    my.counts = my.counts,
+    my.col = my.col,
+    my.outdir = "../PROCESSED_DATA/DESEQ2_RESULTS/PARASITE"
+)
+```
