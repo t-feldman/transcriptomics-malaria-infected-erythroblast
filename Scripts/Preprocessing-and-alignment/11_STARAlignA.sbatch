@@ -1,5 +1,11 @@
 #!/bin/bash
+# Author: Tamar Feldman
+# Project: Feldman et al. Blood Adv. 2023
+# Purpose: Align reads to concatenated genome and sum gene counts using STAR
 
+# Requires the list of directories: 2023DEC09_DirectoryList.csv
+
+#Slurm parameters
 #SBATCH --job-name=STAR #Job name
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -10,23 +16,23 @@
 #SBATCH --output=../slurmout/stara_%A_%a.out
 #SBATCH --error=../slurmout/stara_%A_%a.err
 
-DIR_SHEET=$1 # path/to/list/of/sample/directories
-GENOME_DIR=$2 # path/to/genome/indices
-DATA_DIR=$3 # path/to/fastq/files
-NEW_PATH=$4 # path/to/output/dir
+DIR_SHEET=$1 # path to list of sample directories
+GENOME_DIR=$2 # path directory containing genome indices
+DATA_DIR=$3 # path to parent directory of sample directories
+NEW_PATH=$4 # path to output directory
 
 START=`date +%s`
 date
 echo "Host Name: " $HOSTNAME # where task is being run
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID # which sample
 
-# Set up output directory
+# Set up the output directory
 CURRENT_DIR=`sed -n "$SLURM_ARRAY_TASK_ID"p $DIR_SHEET`
 CLEAN_CD=`echo $CURRENT_DIR | tr -dc '[:alnum:]._-'`
 echo $CLEAN_CD
 [[ -d "$NEW_PATH/$CLEAN_CD" ]] || mkdir -p "$NEW_PATH/$CLEAN_CD"
 
-# Get fastq files
+# Get the appropriate fastq files
 READ1=`find $DATA_DIR/$CLEAN_CD -type f -name "*R1*fq"`
 
 echo $READ1
@@ -35,10 +41,10 @@ READ2=`find $DATA_DIR/$CLEAN_CD -type f -name "*R2*fq"`
 
 echo $READ2
 
+# Run STAR to align reads and record gene counts
 module load biology
 module load star
 
-# run STAR
 CALL="STAR --runThreadN 8 \
 	--genomeDir $GENOME_DIR \
 	--readFilesIn ${READ1} ${READ2} \
