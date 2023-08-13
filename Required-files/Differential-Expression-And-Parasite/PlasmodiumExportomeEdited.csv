@@ -1,0 +1,273 @@
+,PlasmoDB ID,Former.ID,Description,PEXEL.motif,Localisation,PEXEL.PNEP
+1,PF3D7_1102900,PF11_0041,"Plasmodium exported protein (hyp11), unknown function",RILTE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+2*,PF3D7_0631400,"2270.t00309, MAL6P1.15, PFF1525c",Pfmc-2TM Maurer's cleft two transmembrane protein,RMLAQ,"Maurer's Clefts [S1, S2]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+3,PF3D7_0301500,"MAL3P8.13, PFC0075c","Plasmodium exported protein, unknown function",RSLYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+4,PF3D7_0601100,PFF0055w,exported protein family 3,RILTE,Maurer's Clefts [S3],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+5,PF3D7_1001600,PF10_0020,"alpha/beta hydrolase, putative",RKLAE,iRBC cytoskeleton [S4],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+6*,PF3D7_0221500,"PF02_0200, PFB0960c",Pfmc-2TM Maurer's cleft two transmembrane protein,RMLAQ,"Maurer's Clefts [S1, S2]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+7,PF3D7_0532500,"MAL5P1.316, PFE1610w","Plasmodium exported protein, unknown function",RSLSD,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+8,PF3D7_0532600,"MAL5P1.317, PFE1615c","Plasmodium exported protein, unknown function",RILKQ,iRBC cytosol [S6],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+9,PF3D7_0220700,"PF02_0194, PFB0932w","Plasmodium exported protein (hyp9), unknown function",RLLVE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+10,PF3D7_1016600,"PF10_0161, PF10_0161a","Plasmodium exported protein (PHISTc), unknown function",RILSE,Punctate signal in iRBC cytosol [S7],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+11,PF3D7_1401100,PF14_0013,"DnaJ protein, putative",RNLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+13*,PF3D7_1478000,PF14_0752,"Plasmodium exported protein (PHISTa), unknown function",RNLTE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+15,PF3D7_1001800,PF10_0022,"Plasmodium exported protein (PHISTc), unknown function",RTLSD,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+16,PF3D7_1013700,PF10_0134,"conserved Plasmodium protein, unknown function",RILTE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+17,PF3D7_1038700,PF10_0377,"Plasmodium exported protein, unknown function",RLLGE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+18*,PF3D7_0424900,"MAL4P1.232, PFD1185w","Plasmodium exported protein (PHISTa), unknown function",RNLVQ,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+19,PF3D7_1301900,MAL13P1.62,"Plasmodium exported protein, unknown function",RALNE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+20,PF3D7_1038600,PF10_0376,"Plasmodium exported protein, unknown function",RCLNE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+21,PF3D7_1212100,"2277.t00121, MAL12P1.120, PFL0600w","peripheral plastid protein 1, putative",RILKE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+22*,PF3D7_0701400,MAL7P1.3,"exported protein family 4, pseudogene",RCLLQ,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+23*,PF3D7_1039900,PF10_0392,exported protein family 4,RCLLQ,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+24*,PF3D7_1101500,PF11_0023,exported protein family 4,RCLLQ,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+25*,PF3D7_1478100,PF14_0753,"Plasmodium exported protein (hyp13), unknown function",RSLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+26*,PF3D7_0101100,"MAL1P1.2, PFA0055c",exported protein family 4,RCLLQ,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+27*,PF3D7_0324300,"MAL3P7.49, PFC1090w",exported protein family 4,RCLLQ,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+28*,PF3D7_0631600,"2270.t00311, MAL6P1.13, PFF1535w",exported protein family 4,RCLLQ,Maurer's clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+29*,PF3D7_0601000,PFF0050c,exported protein family 4,RCLLQ,Maurer's clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+31,PF3D7_0935500,PFI1715w,"Plasmodium exported protein, unknown function (GEXP22)",RNLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+32,PF3D7_1301200,PF13_0010,glycophorin binding protein,RVLAQ,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+33,PF3D7_0301400,"MAL3P8.12, PFC0070c","Plasmodium exported protein, unknown function",RLLEE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+34,PF3D7_0814100,MAL8P1.93,"conserved Plasmodium protein, unknown function",RFLTD,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+35,PF3D7_0936600,PFI1770w,gametocyte exported protein 5 (PHISTc),RKLSE,"iRBC periphery and cytoskeleton [S7, S10]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+40,PF3D7_0114500,"MAL1P4.16D, PFA0700C","Plasmodium exported protein (hyp10), unknown function",RLLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+41,PF3D7_1477300,PF14_0744,"Plasmodium exported protein (PHIST), unknown function",RSLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+42,PF3D7_0310400,"MAL3P4.26, PFC0435w",parasite-infected erythrocyte surface protein,RLLVD,"TVN junction protein, iRBC periphery, iRBC cytoplasm and around PV [S11, S12]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+43,PF3D7_1034100,PF10_0331a,"conserved Plasmodium protein, unknown function",RVLKE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+44,PF3D7_0201500,"PF02_0015, PFB0075c","Plasmodium exported protein (hyp9), unknown function",RSLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+45,PF3D7_0422000,"MAL4P1.202, PFD1035w","steroid dehydrogenase, putative",RDLLE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+46,PF3D7_1401200,PF14_0014,"Plasmodium exported protein, unknown function",RSLAE,"iRBC cytosol, partially localised to Maurer’s clefts and J-dots [S13]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+47,PF3D7_0219900,"PF02_0186, PFB0910w","Plasmodium exported protein, unknown function",RNLIE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+48,PF3D7_1477000,"PF14_0740, pf14_0741","Plasmodium exported protein (hyp17), unknown function, pseudogene",RSLYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+49,PF3D7_0901800,PFI0086w,"Plasmodium exported protein, unknown function",RSLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+50,PF3D7_0113900,"MAL1P4.12, PFA0670C","Plasmodium exported protein (hyp8), unknown function",RWLSE,"Maurer's Clefts [S14, S15]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+51,PF3D7_0702100,MAL7P1.7,"Plasmodium exported protein (PHISTb), unknown function, pseudogene",RILIE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+52,PF3D7_0104200,"MAL1P1.33, PFA0210c",StAR-related lipid transfer protein,RILKE,"PV, iRBC [S16]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+53,PF3D7_1016900,PF10_0164,early transcribed membrane protein 10.3,RALKD,"PV (Trophozoites, Gametocytes), iRBC (Schizonts) [S17]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+54,PF3D7_1001900,PF10_0023,"Plasmodium exported protein (hyp16), unknown function",RFLSE,Lumen of Maurer's Clefts [S2],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+55,PF3D7_0401800,"MAL4P1.16, PFD0080c","Plasmodium exported protein (PHISTb), unknown function",RNLSE,iRBC periphery [S7],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+56,PF3D7_0113700,"MAL1P4.10, PFA0660w","heat shock protein 40, type II",RCLAE,iRBC [S18],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+57,PF3D7_0402100,"MAL4P1.19, PFD0095c","Plasmodium exported protein (PHISTb), unknown function",RKLYHE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+58,PF3D7_0701900,PF07_0004,"Plasmodium exported protein, unknown function",RILIQ,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+59,PF3D7_1149200,PF11_0509,ring-infected erythrocyte surface antigen (PHISTb),RNLYCE,iRBC periphery [S19],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+60,PF3D7_1102200,PF11_0034,"DnaJ protein, putative",RRLYE, N/A,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+1,PF3D7_1368000,MAL13P1.342a,"conserved Plasmodium protein, unknown function",RILSY,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+2,PF3D7_1007000,PF10_0070,"conserved membrane protein, unknown function",RILSV,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+3,PF3D7_1252800,"2277.t00506, MAL12P1.503, PFL2540w","Plasmodium exported protein (PHISTb), unknown function",RILCT,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+4,PF3D7_0721100,PF07_0087,"conserved Plasmodium protein, unknown function",RKLLS,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+5,PF3D7_1447700,PF14_0453,"conserved Plasmodium protein, unknown function",RLLLF,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+6,PF3D7_0800800,MAL8P1.161,"Plasmodium exported protein (hyp7), unknown function",RSLSS,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+7,PF3D7_0220500,"PF02_0192, PFB0926c","Plasmodium exported protein (hyp2), unknown function",RTLNY,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+8,PF3D7_0935700,PFI1725w,"Plasmodium exported protein, unknown function",RRLAS,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+9,PF3D7_1232800,PFL1583c,"conserved Plasmodium protein, unknown function",RSLKT,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+10,PF3D7_0929800,PFI1460c,"conserved Plasmodium protein, unknown function",KILSD,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+11,PF3D7_0830700,MAL8P1.3,"Plasmodium exported protein (hyp9), unknown function",RSLAL,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+12,PF3D7_0719800,PF07_0081,"conserved protein, unknown function",KLIEE,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+15,PF3D7_0936800,PFI1780w,"Plasmodium exported protein (PHISTc), unknown function",KSLAE,"Maurer's Clefts, iRBC periphery [S20, S21]","Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+1,PF3D7_0220100,"PF02_0188, PFB0920w","DnaJ protein, putative",RSLCE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+2,PF3D7_0936400,PFI1760w,ring-exported protein 4,RNLSE,iRBC cytosol [S24],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+3,PF3D7_1302000,PF13_0076,EMP1-trafficking protein,RSLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+4,PF3D7_0501100.1,"MAL5P1.12, PF3D7_0501100.1, PF3D7_0501100.2, PFE0055c","heat shock protein 40, type II",RSLAE,J-dots [S18],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+5,PF3D7_0501100,"MAL5P1.12, PF3D7_0501100.1, PF3D7_0501100.2, PFE0055c","heat shock protein 40, type II",RSLAE,J-dots [S18],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+6,PF3D7_0402000,"MAL4P1.18, PFD0090c","Plasmodium exported protein (PHISTa), unknown function",RNLSE,PVM [S25],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+7,PF3D7_0731300,MAL7P1.174,"Plasmodium exported protein (PHISTb), unknown function",RILSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+8,PF3D7_0201700,"PF02_0017, PFB0085C","DnaJ protein, putative",RQLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+9,PF3D7_1102500,PF11_0037,"Plasmodium exported protein (PHISTb), unknown function",RNLYE,iRBC surface [S7],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+26,PF3D7_1002000,PF10_0024,"Plasmodium exported protein (hyp2), unknown function",RLLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+27,PF3D7_1372300,null,"Plasmodium exported protein (PHIST), unknown function",RNLAQ,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+28,PF3D7_0101200,"MAL1P1.3, PFA0060w",exported protein family 3,RILTE,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+29,PF3D7_0222200,"PF02_0210, PFB0990c",exported protein family 3,RILTE,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+30,PF3D7_0324200,"MAL3P7.48, PFC1085c",exported protein family 3,RILTE,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+31,PF3D7_0631500,"2270.t00310, MAL6P1.14, PFF1530c",exported protein family 3,RILTE,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+32,PF3D7_0701500,MAL7P1.4,exported protein family 3,RILTE,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+33,PF3D7_0831500,null,"Plasmodium exported protein (PHIST), unknown function",RNLSD,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+34,PF3D7_1039800,PF10_0391,exported protein family 3,RILTE,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+35,PF3D7_1101600,"2297.t00488, PF11_0024",exported protein family 3,RILTE,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+36,PF3D7_0713100,MAL7P1.58,Pfmc-2TM Maurer's cleft two transmembrane protein,RMLAQ,"Maurer's Clefts [S1, S2]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+37,PF3D7_1039700,PF10_0390,Pfmc-2TM Maurer's cleft two transmembrane protein,RMLAQ,"Maurer's Clefts [S1, S2]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+38,PF3D7_0402400,"MAL4P1.23, PFD0115c","Plasmodium exported protein, unknown function",RILVE,J-dots [S27],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+39,PF3D7_0220300,"PF02_0190, PFB0923c","Plasmodium exported protein, unknown function",RTLTE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+40,PF3D7_0936900,PFI1785w,"Plasmodium exported protein (PHISTb), unknown function, pseudogene",RILSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+41,PF3D7_0425100,"MAL4P1.235, PFD1200c","Plasmodium exported protein (hyp6), unknown function",RTLTE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+42,PF3D7_1201200,"2277.t00012, MAL12P1.12, PFL0060w","Plasmodium exported protein (PHISTa-like), unknown function",RKLAD,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+43,PF3D7_1401300,PF14_0015,proline aminopeptidase,RILCD,iRBC [S28],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+44,PF3D7_1425900,PF14_0239,"conserved Plasmodium protein, unknown function",RNLIE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+45,PF3D7_0902300,PFI0110c,"serine/threonine protein kinase, FIKK family (FIKK9.4)",RKLAE,Maurer's clefts [S30],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+46,PF3D7_0102300,"MAL1P1.14, PFA0115w","Plasmodium exported protein, unknown function",RSLAQ,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+47,PF3D7_0936500,PFI1765c,virulence-associated protein 1,RFLTQ,"PV (Early Trophozoite), Maurer's Clefts [S31]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+48,PF3D7_0221200,"PF02_0198, PFB0953w","Plasmodium exported protein (hyp15), unknown function",RSLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+49,PF3D7_0113300,"MAL1P3.09, PFA0635C","Plasmodium exported protein (hyp1), unknown function",RLLTE,iRBC [S32],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+50,PF3D7_0901700,PFI0085c,"Plasmodium exported protein (hyp5), unknown function",RCLTE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+51,PF3D7_1016400,PF10_0160,"serine/threonine protein kinase, FIKK family (FIKK10.1)",RCLAE,Maurer's Clefts [S29],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+52,PF3D7_0731700,MAL7P1.177,"Plasmodium exported protein (hyp9), unknown function",RLLSQ,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+53,PF3D7_1301700,MAL13P1.61,"Plasmodium exported protein (hyp8), unknown function",RSLAE,Maurer's Clefts [S34],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+54,PF3D7_1476300,PF14_0732,"Plasmodium exported protein (PHISTb), unknown function",RKLYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+55,PF3D7_0831400,MAL8P1.206,"Plasmodium exported protein, unknown function",RLLTE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+56,PF3D7_1252500,"2277.t00503, MAL12P1.500, PFL2525c","Plasmodium exported protein, unknown function",RILEE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+57,PF3D7_1477200,PF14_0743,"Plasmodium exported protein (hyp15), unknown function",RSLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+58,PF3D7_0501000,"MAL5P1.11, PFE0050w","Plasmodium exported protein, unknown function",RVLAE,Maurer’s clefts [S13],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+59,PF3D7_0301300,PFC0065c,"alpha/beta hydrolase, putative",RYLSE,iRBC cytoskeleton [S4],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+60,PF3D7_0601700,"2270.t00297, MAL6P1.21, PFF0085w","Plasmodium exported protein (PHISTa), unknown function, pseudogene",RNLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+61,PF3D7_1016800,PF10_0163,"Plasmodium exported protein (PHISTc), unknown function",RVLTE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+62,PF3D7_1149100.1,"PF11_0508, PF3D7_1149100.1, PF3D7_1149100.2","Plasmodium exported protein, unknown function",RVLYD,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+63,PF3D7_1478500,PF14_0757,"Plasmodium exported protein (PHISTa), unknown function, pseudogene",RNLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+64,PF3D7_1352900,MAL13P1.268,"Plasmodium exported protein, unknown function",RKLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+65,PF3D7_0700800,MAL8P1.213,Pfmc-2TM Maurer's cleft two transmembrane protein,RMLAQ,"Maurer's Clefts [S1, S2]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+66,PF3D7_0113400,"MAL1P3.10, PFA0640C","Plasmodium exported protein, unknown function",RVLTE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+67,PF3D7_1000700,"PF10_0007, PF10_0008","Plasmodium exported protein (PHISTa), unknown function, pseudogene",RNLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+68,PF3D7_0501200,"MAL5P1.13, PFE0060w",parasite-infected erythrocyte surface protein,RTLAD,iRBC surface [S11],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+69,PF3D7_0701600,MAL7P1.5,Pfmc-2TM Maurer's cleft two transmembrane protein,RMLAQ,"Maurer's Clefts [S1, S2]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+70,PF3D7_0731200,MAL7P1.173,"Plasmodium exported protein, unknown function",RLLCE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+71,PF3D7_1478800,PF14_0760,"Plasmodium exported protein, unknown function",RRLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+72,PF3D7_0902500,PFI0120c,"serine/threonine protein kinase, FIKK family (FIKK9.6)",RYLSE,Maurer's Clefts [S37],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+73,PF3D7_0112900,"MAL1P3.05, PFA0615w","Plasmodium exported protein, unknown function",RSLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+74,PF3D7_0301600,"MAL3P8.14, PFC0080c","Plasmodium exported protein (hyp1), unknown function",RLLAQ,iRBC cytosol [S13],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+75,PF3D7_1253000,"2277.t00508, PF12_0010, PFL2550w",gametocyte erythrocyte cytosolic protein,RILSD,iRBC cytosol (gametocytes) [S38],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+76,PF3D7_1039000,PF10_0380,"serine/threonine protein kinase, FIKK family (FIKK10.2)",RHLSD,iRBC [S29],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+77,PF3D7_0830600,MAL8P1.4,"Plasmodium exported protein (PHISTc), unknown function",RILYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+78,PF3D7_0424600,"MAL4P1.229, PFD1170c","Plasmodium exported protein (PHISTb), unknown function",RILSE,iRBC periphery [S7],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+79,PF3D7_1016500,PF10_0161,"Plasmodium exported protein (PHISTc), unknown function",RILSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+80,PF3D7_1476900,PF14_0739a,"Plasmodium exported protein, unknown function, pseudogene",RILFE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+81,PF3D7_0221700,"PF02_0202, PFB0970c","Plasmodium exported protein, unknown function",RILSD,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+82,PF3D7_0324100,"MAL3P7.47, PFC1080c",Pfmc-2TM Maurer's cleft two transmembrane protein,RILAQ,"Maurer's Clefts [S1, S2]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+83,PF3D7_0424000,"MAL4P1.223, PFD1140w","Plasmodium exported protein (PHISTc), unknown function",RNLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+84,PF3D7_0731100,MAL7P1.172,EMP1-trafficking protein,RNLGE,iRBC exosome-like vesicles [S39],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+85,PF3D7_0800600,MAL8P1.163,"Plasmodium exported protein (PHISTa), unknown function",RKLYD,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+86,PF3D7_0830900,"2255.m00020, PF08_0001, PFH0015w","Plasmodium exported protein, unknown function",RLLIE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+87,PF3D7_0101300,"MAL1P1.4, PFA0065w",Pfmc-2TM Maurer's cleft two transmembrane protein,RMLAQ,Maurer's Clefts [S1],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+88,PF3D7_0102600,"MAL1P1.17, PFA0130c","serine/threonine protein kinase, FIKK family (FIKK1)",RYLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+89,PF3D7_0113000,"MAL1P3.06, PFA0620c",glutamic acid-rich protein,RLLNE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+90,PF3D7_0113200,"MAL1P3.08, PFA0630c","Plasmodium exported protein, unknown function",RILAD,"iRBC cytosol, partially localised to Maurer’s clefts [S13]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+91,PF3D7_0114100,"MAL1P4.14, PFA0680c",Pfmc-2TM Maurer's cleft two transmembrane protein,RMLAQ,"Maurer's Clefts [S1, S2]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+92,PF3D7_0114200,"MAL1P4.15, PFA0685c",exported protein family 3,RALTE,Maurer's Clefts [S8],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+93,PF3D7_0201800,"PF02_0018, PFB0090c",knob associated heat shock protein 40,RNLAQ,"PVM, iRBC cytosol [S40]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+94,PF3D7_0201900,"PF02_0019, PFB0095c",erythrocyte membrane protein 3,RSLAQ,iRBC periphery (Knobs) [S40],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+95,PF3D7_0202000,"PF02_0020, PFB0100C",knob-associated histidine-rich protein,RTLAQ,iRBC periphery (Knobs) [S43],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+96,PF3D7_0219800,"PF02_0185, PFB0905c","Plasmodium exported protein (PHISTc), unknown function",RNLAQ,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+97,PF3D7_0222100,"PF02_0209, PFB0985c",Pfmc-2TM Maurer's cleft two transmembrane protein,RMLAQ,"Maurer's Clefts [S1, S2]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+98,PF3D7_0424500,"MAL4P1.228, PFD1165w","serine/threonine protein kinase, FIKK family (FIKK4.1)",RHLTE,Maurer's Clefts [S29],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+99,PF3D7_0424700,"MAL4P1.230, PFD1175w","serine/threonine protein kinase, FIKK family (FIKK4.2)",RNLSE,K-dots [S44],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+100,PF3D7_0500800,"MAL5P1.9, PFE0040c",mature parasite-infected erythrocyte surface antigen,RILSE,iRBC periphery [S45],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+101,PF3D7_0532300,"MAL5P1.314, PFE1600w","Plasmodium exported protein (PHISTb), unknown function",RNLCE,"iRBC cytosol, partially localised to Maurer’s clefts [S13]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+102,PF3D7_0532400,"MAL5P1.315, PFE1605w",lysine-rich membrane-associated PHISTb protein,RKLCE,"iRBC periphery (Knobs), Partial co-localisation with Maurer's Clefts [S35]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+103,PF3D7_0601500,"2270.t00299, MAL6P1.19, PFF0075c","Plasmodium exported protein (PHISTb), unknown function",RNLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+104,PF3D7_0631100,PFF1510w,"Plasmodium exported protein (PHISTb), unknown function",RNLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+105,PF3D7_0726100,PF07_0107,"Plasmodium exported protein, unknown function",RSLYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+106,PF3D7_0730900,MAL7P1.171,EMP1-trafficking protein,RSLTE,"iRBC cytosol, partially localised to Maurer’s clefts [S13]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+107,PF3D7_0807700,MAL8P1.126,serine protease DegP,RILND,iRBC cytosol [S47],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+108,PF3D7_0831800,MAL7P1.231,histidine-rich protein II,RLLHE,"Maurer's Clefts, iRBC periphery [S49]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+109,PF3D7_0902600,PFI0125c,"serine/threonine protein kinase, FIKK family (FIKK 9.7)",RHLNE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+110,PF3D7_0936200,PFI1750c,"Plasmodium exported protein (hyp11), unknown function",RILSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+111,PF3D7_0936300,PFI1755c,ring-exported protein 3,RQLSE,iRBC cytosol [S50],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+112,PF3D7_1001400,PF10_0018,"alpha/beta hydrolase, putative",RSLGE,iRBC cytosol [S4],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+113,PF3D7_1002100,PF10_0025,EMP1-trafficking protein,RLLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+114,PF3D7_1016300,PF10_0159,glycophorin binding protein,RILAE,PVM and RBC vesicles (MCs?) [S51],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+115,PF3D7_1038500,PF10_0375,"Plasmodium exported protein, unknown function",RQLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+116,PF3D7_1102300,PF11_0035,"Plasmodium exported protein, unknown function",RILCE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+117,PF3D7_1149300,PF11_0510,"serine/threonine protein kinase, FIKK family (FIKK11)",RILYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+118,PF3D7_1149600,PF11_0513,"DnaJ protein, putative",RNLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+119,PF3D7_1201100,"2277.t00011, MAL12P1.11, PFL0055c",RESA-like protein with PHIST and DnaJ domains,RYLCE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+120,PF3D7_1252700,"2277.t00505, MAL12P1.502, PFL2535w","Plasmodium exported protein (PHISTb), unknown function",RTLFE,iRBC periphery [S7],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+121,PF3D7_1252900,"2277.t00507, MAL12P1.504, PFL2545c","Plasmodium exported protein, unknown function",RTLVE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+122,PF3D7_1253100,"2277.t00509, MAL12P1.506, PFL2555w","Plasmodium exported protein (PHISTa), unknown function",RNLCE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+123,PF3D7_1301400,PF13_0073,"Plasmodium exported protein (hyp12), unknown function",RLLAE,"iRBC cytosol, Maurer's Clefts [S52]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+124,PF3D7_1353100,PF13_0275,"Plasmodium exported protein, unknown function",RILTQ,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+125,PF3D7_1372000,MAL13P1.470,"Plasmodium exported protein (PHISTa), unknown function",RNLSE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+126,PF3D7_1372200,MAL13P1.480,histidine-rich protein III,RLLHE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+127,PF3D7_1401000,PF14_0010,glycophorin binding protein,RVLAE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+128,PF3D7_1401600,PF14_0018,"Plasmodium exported protein (PHISTb), unknown function",RSLYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+129,PF3D7_1476200,"PF14_0730, PF14_0731","Plasmodium exported protein (PHISTb), unknown function",RCLSE,iRBC periphery [S7],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+130,PF3D7_1476400,"PF14_0733, PF14_0734","serine/threonine protein kinase, FIKK family, pseudogene (FIKK14)",RGLCE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+131,PF3D7_1477500,PF14_0746,"Plasmodium exported protein (PHISTb), unknown function",RNLSD,"iRBC cytosol, partially localised to Maurer’s clefts [S13]",Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+132,PF3D7_1478600,PF14_0758,EMP1-trafficking protein,RSLYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+133,PF3D7_1237900,"2277.t00367, MAL12P1.365, PFL1835w","conserved Plasmodium protein, unknown function",RNLCYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+134,PF3D7_0102200,"MAL1P1.13, PFA0110w",ring-infected erythrocyte surface antigen,RNLYGE,iRBC periphery [S53],Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+135,PF3D7_1039100,"PF10_0381, PF10_0382","DnaJ protein, putative, pseudogene",RRLYE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+136,PF3D7_1149500,PF11_0512,"ring-infected erythrocyte surface antigen 2, pseudogene",RNLYGE,,Canonical PEXEL (RxLxE/Q/D) and Relaxed PEXEL (RxLxxE/Q/D)
+5,PF3D7_0112100,"MAL1P3.02, PFA0585w","conserved Plasmodium protein, unknown function",RKLLS,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+6,PF3D7_0628400,"MAL6P1.144, PFF1377w","conserved Plasmodium membrane protein, unknown function",RSLYF,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+7,PF3D7_0902000,PFI0095c,"serine/threonine protein kinase, FIKK family (FIKK9.1)",RSLCA,Maurer's Clefts [S29],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+8,PF3D7_0410000,"MAL4P2.36, PFD0495c",erythrocyte vesicle protein 1 (EVP1),RIIAE,iRBC [S54],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+9,PF3D7_0301700,"MAL3P8.15, PFC0085C","Plasmodium exported protein, unknown function",KSLAE,Maurer's Clefts [20],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+10,PF3D7_1201000,"2277.t00010, MAL12P1.10, PFL0050c","Plasmodium exported protein (PHISTb), unknown function",RILSS,PVM and iRBC periphery [S55],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+11,PF3D7_0801000,PF08_0137,"Plasmodium exported protein (PHISTc), unknown function",RNLGA,J-dots [S27],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+12,PF3D7_1467000,PF14_0638,"conserved Plasmodium membrane protein, unknown function",RLLEG,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+13,PF3D7_1244500,"2277.t00427, MAL12P1.425, PFL2135c","conserved Plasmodium protein, unknown function",RDLIK,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+14,PF3D7_1476600,PF14_0736,"Plasmodium exported protein, unknown function",RILSG,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+15,PF3D7_0800900,MAL8P1.160,"Plasmodium exported protein (hyp7), unknown function, pseudogene",RSLST,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+16,PF3D7_0114000,"MAL1P4.13, PFA0675w",exported protein family 1,RILYS,Maurer’s Clefts [S8],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+17,PF3D7_0201600,"PF02_0016, PFB0080c",PHISTb domain-containing RESA-like protein 1,RNLSS,"iRBC cytosol, iRBC periphery [S7]","Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+18,PF3D7_0424800,"MAL4P1.231, PFD1180w","Plasmodium exported protein (PHISTb), unknown function",RILST,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+19,PF3D7_0730800.1,"MAL7P1.170, PF3D7_0730800.1, PF3D7_0730800.2","Plasmodium exported protein, unknown function, unspecified product",RILSS,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+20,PF3D7_1038800,PF10_0378,RESA-like protein with PHIST and DnaJ domains,RKLYS,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+21,PF3D7_1372100,MAL13P1.475,"Plasmodium exported protein (PHISTb), unknown function",RSLLG,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+22,PF3D7_1429600,PF14_0275,"conserved Plasmodium protein, unknown function",RLLCT,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+23,PF3D7_1458300,PF14_0556,"conserved Plasmodium protein, unknown function",RALTY,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+24,PF3D7_0404800,"MAL4P1.46, PFD0235c","conserved Plasmodium protein, unknown function",RVLHN,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+25,PF3D7_0831200,MAL8P1.204,"DnaJ protein, putative",RYLYA,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+26,PF3D7_0902200,PFI0105c,"serine/threonine protein kinase, FIKK family (FIKK9.3)",RSLSV,Maurer's Clefts [S37],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+27,PF3D7_1002300,PF10_0027,"conserved Plasmodium protein, unknown function",RNLYI,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+28,PF3D7_1033200,PF10_0323,early transcribed membrane protein 10.2,RNLIL,iRBC cytosol [S2],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+29,PF3D7_0220400,"PF02_0191, PFB0925w","DnaJ protein, putative, pseudogene",RNLYT,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+30,PF3D7_1127000,PF11_0281,"protein phosphatase, putative",RCLNY,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+31,PF3D7_1252300,"2277.t00501, MAL12P1.498, PFL2515c","conserved Plasmodium protein, unknown function",RSLMI,Maurer's Clefts [S56],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+32,PF3D7_0702500,PF07_0008,"Plasmodium exported protein, unknown function",RILKS,"Maurer's Clefts [S56, S57]","Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+33,PF3D7_1200800,"2277.t00008, MAL12P1.8, PFL0040c","serine/threonine protein kinase, FIKK family (FIKK12)",KCLSE,Maurer's Clefts [S37],"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+34,PF3D7_1001700,PF10_0021,"Plasmodium exported protein (PHISTc), unknown function",KILCE,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+35,PF3D7_1334600,PF13_0193,MSP7-like protein (MSRP3) ,KLLEE,,"Non-canonical PEXELs (RxL, KxLxE/Q/D)"
+1,PF3D7_0929400,PFI1445w,high molecular weight rhoptry protein 2 (RhopH2),,"PVM and iRBC periphery [S59, S60]",PNEP
+3,PF3D7_1439000,PF14_0369,Copper Transporter,,"iRBC periphery (Rings), parasite membrane (Schizonts) [S62]",PNEP
+4,PF3D7_1227200,"2277.t00263, MAL12P1.263, PFL1315w",potassium channel K1,,iRBC periphery [S63],PNEP
+5,PF3D7_1310500,MAL13P1.50,"conserved protein, unknown function",,"PV, iRBC periphery",PNEP
+6*,PF3D7_1101800,PF11_0026,exported protein family 1 (EPF1) ,,"Maurer's Clefts, iRBC cytosol [S8]",PNEP
+7*,PF3D7_0601300,PFF0065c,exported protein family 1 (EPF1) ,,"Maurer's Clefts, iRBC cytosol [S8]",PNEP
+8*,PF3D7_0222000,"PF02_0208, PFB0980w",exported protein family 1 (EPF1) ,,"Maurer's Clefts, iRBC cytosol [S8]",PNEP
+9,PF3D7_0312400,"MAL3P4.8, PFC0525c",glycogen synthase kinase 3 (GSK3),,Maurer's Clefts [S64] and/or Parasite cell [S66],PNEP
+10,PF3D7_0204100,"PF02_0039, PFB0190c","conserved Plasmodium protein, unknown function",,iRBC cytosol [S20,PNEP
+12,PF3D7_0905400,PFI0265c,high molecular weight rhoptry protein 3 (RhopH3),,"PVM and iRBC periphery [S60, S67]",PNEP
+13,PF3D7_0822600,PF08_0036,protein transport protein SEC23 (SEC23),,Maurer's Clefts [S68],PNEP
+14,PF3D7_0214000,"PF02_0131, PFB0635w",T-complex protein 1 subunit theta (CCT8),,iRBC cytosol [S3] or parasite cell [S69],PNEP
+15,PF3D7_0214100,"PF02_0132, PFB0640c",protein transport protein SEC31 (SEC31),,Punctate signal in iRBC cytosol [S70],PNEP
+16,PF3D7_0830500,PF08_0003,"sporozoite and liver stage tryptophan-rich protein, putative (TryThrA)",,Punctate signal in iRBC cytosol [S56],PNEP
+17,PF3D7_1136500,"PF11_0377, PF3D7_1136500.1, PF3D7_1136500.2",casein kinase 1 (CK1),,"iRBC periphery, cytosol, secreted into the extracellular space [S72] ",PNEP
+18,PF3D7_0515300,"MAL5P1.153, PFE0765w",phosphatidylinositol 3-kinase (PI3K),,iRBC cytoplasm [S73],PNEP
+19,PF3D7_0402200,"3D7Surf4.1, MAL4P1.20, MAL4P1.21, PFD0100c, PFD0105c",surface-associated interspersed protein 4.1 (SURFIN 4.1),,Maurer's Clefts [S76] and merozoite surface [S77],PNEP
+1,PF3D7_0935800,PFI1730w,cytoadherence linked asexual protein 9 (CLAG9),,"Rhoptries, iRBC periphery [S79]",PNEP
+2,PF3D7_1334700,PF13_0194,MSP7-like protein (MSRP7),,iRBC cytosol [S56],PNEP
+3,PF3D7_1334500,PF13_0192,MSP7-like protein (MSRP6),,Punctated staining in iRBC cytosol [S56],PNEP
+4,PF3D7_0936000,PFI1740c,ring-exported protein 2 (REX2),,Maurer's clefts [S24],PNEP
+8,PF3D7_1448400,PF14_0462,"ubiquitin-protein ligase, putative (HRD3)",,iRBC [S81],PNEP
+9,PF3D7_0301700,"MAL3P8.15, PFC0085C","Plasmodium exported protein, unknown function",,"Maurer's Clefts [S20, 81]",PNEP
+10,PF3D7_1353200,PF13_0276,MAHRP2,,Maurer's Clefts tethers [S82],PNEP
+11,PF3D7_0302200 ,"MAL3P1.2, PFC0110w",cytoadherence linked asexual protein 3.2 (CLAG3.2),,"PVM, iRBC periphery [S84]",PNEP
+12,PF3D7_0701700,"1868.m00022, PF07_0002",exported protein family 1 (EPF1) ,,"Maurer's Clefts, iRBC cytosol [S8]",PNEP
+13,PF3D7_0631300,"2270.t00308, MAL6P1.16, PFF1520w",exported protein family 1 (EPF1) ,,"Maurer's Clefts, iRBC cytosol [S8]",PNEP
+14,PF3D7_1370300,MAL13P1.413,membrane associated histidine-rich protein (MAHRP1),,"Maurer's Clefts [S86, S87]",PNEP
+15,,PFI1735c,ring-exported protein 1 (REX1),,Maurer's Clefts [S26],PNEP
+,PF3D7_0935900,,,,Maurer's Clefts [S56],PNEP
+16,PF3D7_0830400,PF08_0004,"conserved Plasmodium protein, unknown function",,Maurer's Clefts [S87],PNEP
+17,PF3D7_0501300,MAL5P1.14 PFE0065w,skeleton-binding protein 1 (SBP1),,"Partial co-localisation to Maurer's clefts and partial co-localisation to the iRBC periphery (Knobs) [S56, S57]",PNEP
+18,PF3D7_0702400,PF07_0007,small exported membrane protein 1 (SEMP1),,Maurer's Clefts [S56],PNEP
+19,PF3D7_1252300,"2277.t00501, MAL12P1.498, PFL2515c","conserved Plasmodium protein, unknown function",,"Maurer's Clefts [S56, S57]",PNEP
+20,PF3D7_0702500,PF07_0008,"Plasmodium exported protein, unknown function",,Maurer's Clefts [S89-S93],PNEP
+21,PF3D7_1149000,"PF11_0506, PF11_0507","antigen 332, DBL-like protein (Pf332)",,Partially exported in P. falciparum. Maurer's Clefts [56],PNEP
+22,PF3D7_1148900,PF11_0505,"Plasmodium exported protein, unknown function",,Partially exported in P. falciparum. Maurer's Clefts [56],PNEP
+23,PF3D7_1334300,PF13_0191,MSP7-like protein (MSRP5),,Partially exported in P. falciparum. Punctated signal in iRBC cytosol [S56],PNEP
+24,PF3D7_0424400,"3D7Surf4.2, MAL4P1.227, PFD1160w",surface-associated interspersed protein 4.2 (SURFIN 4.2) (SURF4.2),,"Maurer's Clefts, iRBC cytoplasm [S94, S95]",PNEP
+25,PF3D7_1401400,PF14_0016,early transcribed membrane protein 14.1 (ETRAMP14),,Maurer's Clefts [S96],PNEP
+26,PF3D7_0831700 ,MAL7P1.228,heat shock protein 70 (HSP70-x),,"PV, J-dots [S97, S98]",PNEP
+27,PF3D7_0302500,"MAL3P1.5, PFC0120w",cytoadherence linked asexual protein 3.1 (CLAG3.1),,"PVM, iRBC periphery [S84] ",PNEP
+28,PF3D7_0220800,"PF02_0195, PFB0935w",cytoadherence linked asexual protein 2 (CLAG2),,"PVM, iRBC periphery [S101]",PNEP
+29,PF3D7_0831600,MAL7P1.229,cytoadherence linked asexual protein 8 (CLAG8),,"PVM, iRBC periphery [S101]",PNEP
+30,PF3D7_0718300,MAL7P1.92,cysteine repeat modular protein 2 (CRMP2),,Maurer's Clefts [S102],PNEP
+31,PF3D7_0911300,PFI0550w,cysteine repeat modular protein 1 (CRMP1),,Maurer's Clefts [S102],PNEP
+32,PF3D7_0408700,"MAL4P2.23, PFD0430c",perforin-like protein 1 (PLP1),,iRBC periphery [S104],PNEP
+33,PF3D7_0904900,PFI0240c,copper-transporting ATPase (CuTP),,Parasite and iRBC periphery [S105],PNEP
+34,PF3D7_0911900,PFI0580c,Falstatin (Inhibitor of cysteine protease),,"PV and puctated staining in iRBC cytoplasm [S106, S107]",PNEP
+35,PF3D7_1106800,PF11_0079,pseudo-tyrosine kinase-like protein,,iRBC [S108],PNEP
+36,PF3D7_1121300,PF11_0220,tyrosine kinase-like protein (TKL2),,iRBC [S20],PNEP
+37,PF3D7_1229400,"2277.t00284, MAL12P1.284, PFL1420w",macrophage migration inhibitory factor,,iRBC[S20],PNEP
+38,PF3D7_0807700,MAL8P1.126,serine protease DegP (DegP),,iRBC [S47],PNEP
+39,PF3D7_0324000,"MAL3P7.46, PFC1075w",exported protein family 1 (EPF1) ,,"Maurer's Clefts, iRBC cytosol [S8]",PNEP
+40,PF3D7_0718100,MAL7P1.91,exported serine/threonine protein kinase (EST),,iRBC periphery [S109],PNEP
