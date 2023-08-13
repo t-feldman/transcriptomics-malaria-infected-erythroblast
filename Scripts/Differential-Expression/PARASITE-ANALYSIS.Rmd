@@ -1,0 +1,107 @@
+---
+title: "PARASITE ANALYSIS"
+author: "Tamar Feldman"
+date: '2023-08-13'
+output: html_document
+---
+
+<font size="4">Project: Feldman et al. _Blood Adv_. 2023  
+Purpose:  
+- Compare parasite gene expression at different host cell stages to blood stage transcriptome.  
+- Tally transcripts encoding known or suspected exported effectors  
+Required Files:  
+- Pf_Published_Otto16.csv  
+- PfGeneCountsTable_v3.csv  
+- ParasiteColData.csv  
+- PlasmodiumExportomeEdited.csv
+</font>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# LIBRARIES
+
+```{r include = FALSE, eval=FALSE}
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(tidyverse)
+library(DESeq2)
+library(pheatmap)
+library(RColorBrewer)
+library(grid)
+```
+
+# PREPARE FILES
+## OTTO ET AL
+Load the blood stage transcriptome published by Otto et al.
+```{r eval=FALSE}
+otto.file.path <- "../REFERENCE_FILES/DIFFERENTIAL_EXPRESSION/Pf_Published_Otto16.csv"
+otto.counts <- read.csv(otto.file.path, header = T)
+otto.counts <- data.frame(otto.counts, row.names = "gene_ids")
+#%>%
+#  filter(rowMeans(.) >= 5)
+print(head(otto.counts))
+```
+
+## MY COUNTS
+Load the table of parasite gene counts from this study.
+```{r eval=FALSE}
+my.file.path <- "../PROCESSED_DATA/ALIGNMENT_RESULTS/PfGeneCountsTable_v3.csv"
+my.counts <- read.csv(my.file.path, header = T)
+rownames(my.counts) <- my.counts$Gene.ID
+my.counts <- my.counts[,2:ncol(my.counts)]
+head(my.counts)
+```
+# COMPARE BLOOD STAGE AND ERYTHROBLAST
+
+## DESEQ2 FOR NORMALIZED COUNTS
+Use DESeq2 to produce a table of normalized counts
+```{r eval=FALSE}
+my.col.path <- "../REFERENCE_FILES/DIFFERENTIAL_EXPRESSION/ParasiteColData.csv"
+my.coldata <- read.csv(file = my.col.path, header = T)
+my.coldata$cell.type <- factor(my.coldata$cell.type,levels = c("ProE","BasoE","PolyE","OrthoE"))
+my.dds <- DESeqDataSetFromMatrix(countData = my.counts, colData = my.coldata, design = ~cell.type)
+keep <- rowSums(counts(my.dds) >= 10) >= 4
+my.dds <- my.dds[keep,]
+my.dds <- estimateSizeFactors(my.dds)
+my.pf.counts <- counts(my.dds, normalized = T)
+```
+
+## MERGE
+Merge the counts from this study and Otto et al. into a single table
+```{r eval=FALSE}
+all.counts <- merge(my.pf.counts,otto.counts, by = 0)
+print(head(all.counts))
+```
+
+## SPEARMANN
+Use Spearmann's correlation for comparison (see Ludwig et al. Cell Rep. 2019 comparison of erythroblast transcriptomes with published studies)
+```{r eval=FALSE}
+cormat <- cor(x = all.counts[,2:18], y = all.counts[,19:length(colnames(all.counts))], method = "spearman")
+cormat2 <- cor(all.counts[,-1],method = "spearman")
+```
+
+# EXPRESSION OF EXPORTED EFFECTORS
+Load list of parasite "exportome" genes and select genes expressed at the troph stage according to Otto et al. 
+```{r eval=FALSE}
+export.file.path <- "../REFERENCE_FILES/DIFFERENTIAL_EXPRESSION/PlasmodiumExportomeEdited.csv"
+export.genes <- read.csv(export.file.path, header = T)
+# get non-zero counts at either stage
+troph.genes <- otto.counts %>%
+  select(hrs_8, hrs_16) %>%
+  filter(rowSums(.) != 0)
+export.troph <- merge(troph.genes, export.genes, by.x = 0,by.y =
+"PlasmoDB.ID")
+```
+
+```{r eval=FALSE}
+export.troph <- export.troph[!duplicated(export.troph$Row.names),]
+# merge with expressed genes
+my.export <- merge(my.pf.counts, export.troph,by.x = 0, by.y = "Row.names")
+print(head(my.export))
+my.export <- my.export[!duplicated(my.export$Row.names),]
+
+write.csv(x = my.export, file = "../PROCESSED_DATA/DESEQ2_RESULTS/PARASITE/ExportedOverlap_Output.csv")
+```
