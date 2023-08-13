@@ -1,6 +1,9 @@
 #!/bin/bash
+# Author: Tamar Feldman
+# Project: Feldman et al. Blood Adv. 2023
+# Purpose: Retrieve reference genomes and annotations and concatenate
 
-REF_DIR=$1
+REF_DIR=$1 # path to output directory for reference files
 # make directory in files for reference sequences
 [[ -d "$REF_DIR" ]] || mkdir -p "$REF_DIR"
 
