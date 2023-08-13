@@ -1,7 +1,11 @@
 #!/bin/bash
-# Purpose: Run Trim Galore for quality and adapter trimming and FastQC
 # Author: Tamar Feldman
+# Project: Feldman et al. Blood Adv. 2023
+# Purpose: Perform quality and adapter trimming on raw .fastq files
 
+# Requires a list of sample directories: 2023DEC09_DirectoryList.csv
+
+# Slurm parameters
 #SBATCH --job-name=TRIMGL1 #Job name
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
@@ -12,18 +16,18 @@
 #SBATCH --error=../slurmout/trimgl_%A_%a.err
 
 
-DATA_DIR=$1 # path/to/directory/with/input/files
-DIR_SHEET=$2 # path/to/list/of/sample/directories
-NEW_PATH_DATA=$3  # path/to/output/files/directory
-NEW_PATH_FASTQC=$4 # path/to/fastqc/files/directory
+DATA_DIR=$1 # path to parent directory of input file directories
+DIR_SHEET=$2 # path to 2023DEC09_DirectoryList.csv
+NEW_PATH_DATA=$3  # path to parent output directory for trimmed fastq files
+NEW_PATH_FASTQC=$4 # path to parent output directory for FastQC
 
+# Print information about slurm task.
 START=`date +%s`
 date
-
 echo "Host Name: " $HOSTNAME # where task is being run
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID # which sample
 
-# Set up output directory
+# Set up the output directory for the current sample
 CURRENT_DIR=`sed -n "$SLURM_ARRAY_TASK_ID"p $DIR_SHEET`
 CLEAN_CD=`echo $CURRENT_DIR | tr -dc '[:alnum:]._-'`
 echo $CLEAN_CD
@@ -31,9 +35,9 @@ echo $CLEAN_CD
 [[ -d "$NEW_PATH_DATA/$CLEAN_CD" ]] || mkdir -p "$NEW_PATH_DATA/$CLEAN_CD"
 [[ -d "$NEW_PATH_FASTQC/$CLEAN_CD" ]] || mkdir -p "$NEW_PATH_FASTQC/$CLEAN_CD"
 
+# Run TrimGalore with FastQC on fastq files
 module load biology
 module load trim_galore
-
 for i in L001 L002; do
 	# Get fastq files
 	FASTA1=`find $DATA_DIR/$CLEAN_CD -type f -name "*${i}_R1*"`
